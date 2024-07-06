@@ -7,7 +7,7 @@ const PageLoading = () => {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      navigate('/seller-products');
+      navigate('/ProductSellerPage');
     }, 3000);
 
     return () => clearTimeout(timer); // Cleanup the timer if the component unmounts
