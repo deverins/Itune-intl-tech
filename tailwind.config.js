@@ -12,7 +12,7 @@ export default {
     },
   },
   plugins: [
-    function ({ addUtilities }) {
+    function({ addUtilities }) {
       const newUtilities = {
         '.montserrat-regular': {
           fontFamily: 'Montserrat, sans-serif',
