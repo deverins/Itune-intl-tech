@@ -9,25 +9,11 @@ export default {
       fontFamily: {
         Montserrat: ['Montserrat', 'sans-serif'],
       },
+      fontWeight: {
+        normal: 400,
+        bold: 700,
+      },
     },
   },
-  plugins: [
-    function ({ addUtilities }) {
-      const newUtilities = {
-        '.montserrat-regular': {
-          fontFamily: 'Montserrat, sans-serif',
-          fontOpticalSizing: 'auto',
-          fontWeight: '400',
-          fontStyle: 'normal',
-        },
-        '.montserrat-bold': {
-          fontFamily: 'Montserrat, sans-serif',
-          fontOpticalSizing: 'auto',
-          fontWeight: '700',
-          fontStyle: 'normal',
-        },
-      }
-      addUtilities(newUtilities, ['responsive', 'hover'])
-    }
-  ],
+  plugins: [],
 }
