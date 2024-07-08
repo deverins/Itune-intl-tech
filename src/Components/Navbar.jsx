@@ -17,7 +17,9 @@ export const Navbar = () => {
     <>
     <nav className="bg-[#2E3192] top-0 h-24 w-full fixed flex justify-between items-center px-4 md:px-20 text-white">
       <div className="mt-2">
-        <img className="w-28" src={logo} alt="Logo" />
+        <Link to={''}>
+          <img className="w-28" src={logo} alt="Logo" />
+        </Link>
       </div>
       <ul className="hidden sm:flex items-center gap-8 font-bold text-2xl">
         <li>

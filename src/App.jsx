@@ -4,6 +4,7 @@ import ProductSellerPage from './Components/ProductSellerPage';
 import Layout from './Components/Layout';
 import CartPage from './Components/CartPage.jsx';
 import CheckOut from './Components/CheckOut.jsx';
+import CardVerification from './Components/CardVerification.jsx';
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
           <Route index element={<ProductSellerPage />} />
           <Route path="/product/cart" element={<CartPage />} />
           <Route path="/product/checkout" element={<CheckOut />} />
+          <Route path="/card-verification" element={<CardVerification />} />
         </Route>
       </Routes>
     </div>
