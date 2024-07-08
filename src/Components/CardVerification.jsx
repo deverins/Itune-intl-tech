@@ -24,7 +24,7 @@ const CardVerification = () => {
   };
 
   const handleVerify = () => {
-    navigate('/'); // Navigate to the home page or desired route
+    navigate('/payment-in-process'); 
   };
 
   return (
