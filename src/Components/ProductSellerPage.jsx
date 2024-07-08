@@ -3,10 +3,7 @@ import backgroundImg from '../Components/imgs/bg-img.png';
 import music from '../Components/imgs/music.png';
 import search from '../Components/imgs/Search.png';
 import sale from '../Components/imgs/sale.png';
-import product1 from '../Components/imgs/laptop (2).png';
 import products from './productData';
-// import product3 from '../Components/imgs/product3.png';
-// //... import other images similarly
 
 const ProductSellerPage = () => {
   return (

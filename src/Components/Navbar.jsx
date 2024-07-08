@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import logo from '../Components/imgs/logo.png';
 import cart from '../Components/imgs/cart.png';
 import wishList from '../Components/imgs/Favorite_light.png';
+import three from '../Components/imgs/three.png';
 import user from '../Components/imgs/User_alt.png';
 import { Link } from 'react-router-dom';
 
@@ -13,7 +14,8 @@ export const Navbar = () => {
   };
 
   return (
-    <nav className="bg-[#2E3192] h-24 w-full fixed flex justify-between items-center px-4 md:px-20 text-white">
+    <>
+    <nav className="bg-[#2E3192] top-0 h-24 w-full fixed flex justify-between items-center px-4 md:px-20 text-white">
       <div className="mt-2">
         <img className="w-28" src={logo} alt="Logo" />
       </div>
@@ -24,20 +26,23 @@ export const Navbar = () => {
           </Link>
         </li>
         <li>
-          <Link to="/cart" className="flex items-center hover:text-gray-300">
-            <img src={cart} alt="Cart" className="w-6 h-6 mr-2" />
-            Cart
-          </Link>
+        <Link to="/product/cart" className="flex items-center hover:text-gray-300">
+      <div className='relative'>
+        <img src={cart} alt="Cart" className="w-10 h-10 mr-2" />
+        <img src={three} alt="" className="absolute top-0 left-5 w-5 h-5" />
+      </div>
+      Cart
+    </Link>
         </li>
         <li>
-          <Link to="/wishlists" className="flex items-center hover:text-gray-300">
-            <img src={wishList} alt="Wish List" className="w-6 h-6 mr-2" />
+          <Link to="" className="flex items-center hover:text-gray-300">
+            <img src={wishList} alt="Wish List" className="w-10 h-10 mr-2" />
             Wishlist
           </Link>
         </li>
         <li>
-          <Link to="/account" className="flex items-center hover:text-gray-300">
-            <img src={user} alt="Account" className="w-6 h-6 mr-2" />
+          <Link to="" className="flex items-center hover:text-gray-300">
+            <img src={user} alt="Account" className="w-10 h-10 mr-2" />
             Account
           </Link>
         </li>
@@ -58,21 +63,22 @@ export const Navbar = () => {
           <Link to="/" className="flex items-center hover:text-gray-300" onClick={toggleMenu}>
             All Products
           </Link>
-          <Link to="/cart" className="flex items-center hover:text-gray-300" onClick={toggleMenu}>
-            <img src={cart} alt="Cart" className="w-6 h-6 mr-2" />
+          <Link to="/product/cart" className="flex items-center hover:text-gray-300" onClick={toggleMenu}>
+            <img src={cart} alt="Cart" className="w-10 h-10 mr-2" />
             Cart
           </Link>
-          <Link to="/wishlists" className="flex items-center hover:text-gray-300" onClick={toggleMenu}>
-            <img src={wishList} alt="Wish List" className="w-6 h-6 mr-2" />
+          <Link to="" className="flex items-center hover:text-gray-300" onClick={toggleMenu}>
+            <img src={wishList} alt="Wish List" className="w-10 h-10 mr-2" />
             <p>Wishlist</p>
           </Link>
-          <Link to="/account" className="flex items-center hover:text-gray-300" onClick={toggleMenu}>
-            <img src={user} alt="Account" className="w-6 h-6 mr-2" />
+          <Link to="" className="flex items-center hover:text-gray-300" onClick={toggleMenu}>
+            <img src={user} alt="Account" className="w-10 h-10 mr-2" />
             Account
           </Link>
         </div>
       )}
     </nav>
+    </>
   );
 };
 
