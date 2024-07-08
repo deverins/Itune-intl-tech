@@ -1,14 +1,20 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import PageLoading from './Components/PageLoading';
 import ProductSellerPage from './Components/ProductSellerPage';
+import Layout from './Components/Layout';
 
 const App = () => {
   return (
-    <Routes>
-      <Route path="/" element={<PageLoading />} />
-      <Route path="/ProductSellerPage" element={<ProductSellerPage />} />
-    </Routes>
+    <>
+      <div className=' font-Montserrat'>
+        <Routes>
+        <Route element={<Layout />}>
+          <Route index element={<ProductSellerPage />} />
+        </Route>
+        </Routes>
+
+      </div>
+    </>
   );
 }
 
