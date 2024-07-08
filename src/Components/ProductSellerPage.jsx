@@ -40,7 +40,7 @@ const ProductSellerPage = () => {
           </div>
       <section className="py-2 pb-6">
         <div className="max-w-screen-lg mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 ">
             {/* Repeat this block for each product */}
             {products.map(product => (
             <div key={product.id} className="bg-[#AAABE4] p-4 rounded-lg shadow-md">
