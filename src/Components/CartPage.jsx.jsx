@@ -21,6 +21,14 @@ const CartPage = () => {
     dispatch({ type: 'REMOVE_FROM_CART', payload: productId });
   };
 
+  const handleIncrement = (productId) => {
+    dispatch({ type: 'INCREMENT_QUANTITY', payload: productId });
+  };
+
+  const handleDecrement = (productId) => {
+    dispatch({ type: 'DECREMENT_QUANTITY', payload: productId });
+  };
+
   const subtotal = cart.reduce((total, product) => total + calculateTotalPrice(product.price, product.quantity), 0);
   const discount = 100000;
   const total = subtotal - discount;
@@ -29,12 +37,12 @@ const CartPage = () => {
     <>
       <div className="cart-page-container font-bold bg-[#b4b5e5]">
         <div className="flex items-center pt-28 mx-auto max-w-screen-lg">
-          <div>
+          <div className='ml-3 lg:-ml-2'>
             <img src={cartt} alt="Cart" className="w-10 h-10 mr-2" />
           </div>
           Cart
         </div>
-        <p className="flex items-center text-sm mt-2 mx-auto max-w-screen-lg">{cart.length} items in your cart</p>
+        <p className="flex items-center text-sm mt-2 mx-auto max-w-screen-lg "><span className='font-bold ml-4 md:ml-4 text-lg mr-1'>{cart.length}</span> items in your cart</p>
         <section className="max-w-screen-lg mx-auto p-4 bg-white rounded-2xl shadow-lg mt-4">
           <table className="w-full">
             <thead className="hidden md:table-header-group">
@@ -61,10 +69,10 @@ const CartPage = () => {
                   </td>
                   <td className="py-4">₦{parsePrice(product.price).toLocaleString()}</td>
                   <td className="py-4">
-                    <div className="flex items-center lg:w-[75px] lg:h-[50px] w-[54.82px] h-[35.6px] rounded-lg border space-x-2 text-bold border-[#2E3192] text-[#2E3192]">
-                      <p className="font-bold">-</p>
-                      <p className="font-bold">{product.quantity}</p>
-                      <p className="font-bold">+</p>
+                    <div className="flex items-center lg:w-[75px] lg:h-[50px] md:w-[55px] md:p-4 md:h-[35px] w-[45px] h-[25px] rounded-lg border space-x-2 lg:space-x-3 font-bold border-[#2E3192] text-[#2E3192]">
+                      <button onClick={() => handleDecrement(product.id)} className="font-bold md:font-semibold md:text-sm">-</button>
+                      <p className="font-bold md:font-semibold md:text-sm">{product.quantity}</p>
+                      <button onClick={() => handleIncrement(product.id)} className="font-bold md:font-semibold md:text-sm">+</button>
                     </div>
                   </td>
                   <td className="py-4">₦{calculateTotalPrice(product.price, product.quantity).toLocaleString()}</td>

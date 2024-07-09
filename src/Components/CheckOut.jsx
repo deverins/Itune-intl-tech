@@ -46,28 +46,6 @@ const CheckOut = () => {
                 </div>
               </div>
               <div className='flex flex-col md:flex-row justify-between'>
-                <label className="block mb-1 text-xl font-bold mt-10">Delivery Method</label>
-                <div className="flex items-center space-x-8 mb-10 mt-10">
-                  <label className="flex items-center">
-                    <input type="checkbox" className="mr-2 w-5 h-5 md:w-6 md:h-6" />
-                    <p className='text-lg md:text-1xl'>
-                    Pickup
-                    </p>
-                  </label>
-                  <label className="flex items-center">
-                    <input type="checkbox" className="mr-2 w-5 h-5 md:w-6 md:h-6" />
-                    <p className='text-lg md:text-1xl'>
-                    Delivery
-                    </p>
-                  </label>
-                </div>
-              </div>
-            </form>
-          </div>
-          <div className="w-full lg:w-[60%] lg:h-[550px] md:h-[900px] rounded-lg p-4 md:p-8 bg-white mb-8 lg:mb-0">
-            <form className="space-y-4">
-              <div>
-              <div className='flex flex-col md:flex-row justify-between'>
                 <label className="block mb-1 text-xl font-bold mt-10">Type of Card</label>
                 <div className="flex items-center space-x-8 mb-10 mt-10">
                   <label className="flex items-center">
@@ -80,6 +58,28 @@ const CheckOut = () => {
                     <input type="checkbox" className="mr-2 w-5 h-5 md:w-6 md:h-6" />
                     <p className='text-lg md:text-1xl'>
                       Visa
+                    </p>
+                  </label>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div className="w-full lg:w-[60%] lg:h-[550px] md:h-[900px] rounded-lg p-4 md:p-8 bg-white mb-8 lg:mb-0">
+            <form className="space-y-4">
+              <div>
+              <div className='flex flex-col md:flex-row justify-between'>
+                <label className="block mb-1 text-xl font-bold mt-6">Delivery Method</label>
+                <div className="flex items-center space-x-8 mb-10 mt-6">
+                  <label className="flex items-center">
+                    <input type="checkbox" className="mr-2 w-5 h-5 md:w-6 md:h-6" />
+                    <p className='text-lg md:text-1xl'>
+                    Pickup
+                    </p>
+                  </label>
+                  <label className="flex items-center">
+                    <input type="checkbox" className="mr-2 w-5 h-5 md:w-6 md:h-6" />
+                    <p className='text-lg md:text-1xl'>
+                    Delivery
                     </p>
                   </label>
                 </div>

@@ -23,7 +23,7 @@ const ProductSellerPage = () => {
       <main className="pt-24 overflow-x-hidden">
         {/* Hero Section */}
         <section className="h-auto py-4 bg-cover bg-center px-2 w-full" style={{ backgroundImage: `url(${backgroundImg})` }}>
-          <div className='flex flex-col md:flex-row justify-between md:-mx-14 text-white lg:mx-14 items-end'>
+          <div className='flex flex-col md:flex-row justify-between md:-mx-14 md:ml-4 ml-2 text-white lg:mx-14 items-end'>
             <div className='w-full md:w-1/2 mb-4 md:mb-0'>
               <h1 className='font-bold text-lg md:text-5xl mt-10'>Don’t Miss Out!</h1>
               <p className='font-medium text-lg md:text-2xl w-full md:w-10/12 lg:w-8/12'>
@@ -36,8 +36,8 @@ const ProductSellerPage = () => {
             </div>
           </div>
           <div className="flex items-center mt-10 lg:w-1/2 md:w-full justify-center md:justify-start px-2">
-            <div className="relative flex items-center w-full max-w-md mb-2 md:mb-0 md:mr-4 pl-8">
-              <img src={search} alt="Search" className="w-6 h-6 absolute left-9" />
+            <div className="relative flex items-center w-full max-w-md mb-2 md:mb-0 md:mr-4 pl-0 lg:pl-12 md:-pl-12">
+              <img src={search} alt="Search" className="w-6 h-6 absolute lg:left-12 md:left-10 left-0" />
               <input type="text" placeholder='Search' className="pl-10 pr-3 py-2 w-full text-black border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:border-transparent" />
             </div>
             <button className="bg-[#2E3192] border border-white text-white py-2 px-4 rounded-md ml-2">Search</button>

@@ -4,7 +4,6 @@ const ProductContext = createContext();
 
 const initialState = {
   cart: JSON.parse(localStorage.getItem('cart')) || [],
-  otpVerified: false,
   paymentStatus: null,
 };
 
@@ -37,10 +36,19 @@ const productReducer = (state, action) => {
           item.id === action.payload.id ? { ...item, quantity: action.payload.quantity } : item
         ),
       };
-    case 'VERIFY_OTP':
+    case 'INCREMENT_QUANTITY':
       return {
         ...state,
-        otpVerified: true,
+        cart: state.cart.map(item =>
+          item.id === action.payload ? { ...item, quantity: item.quantity + 1 } : item
+        ),
+      };
+    case 'DECREMENT_QUANTITY':
+      return {
+        ...state,
+        cart: state.cart.map(item =>
+          item.id === action.payload ? { ...item, quantity: item.quantity - 1 } : item
+        ).filter(item => item.quantity > 0), // Ensure quantity does not go below 0
       };
     case 'SET_PAYMENT_STATUS':
       return {
@@ -51,6 +59,7 @@ const productReducer = (state, action) => {
       return state;
   }
 };
+
 
 const ProductProvider = ({ children }) => {
   const [state, dispatch] = useReducer(productReducer, initialState);
