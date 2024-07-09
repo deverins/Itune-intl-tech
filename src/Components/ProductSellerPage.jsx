@@ -13,7 +13,7 @@ const ProductSellerPage = () => {
       <main className="pt-24 overflow-x-hidden">
         {/* Hero Section */}
         <section className="h-auto py-4 bg-cover bg-center px-2 w-full" style={{ backgroundImage: `url(${backgroundImg})` }}>
-          <div className='flex flex-col md:flex-row justify-between md:-mx-14 text-white lg:ml-14 items-end'>
+          <div className='flex flex-col md:flex-row justify-between md:-mx-14 text-white lg:mx-14 items-end'>
             <div className='w-full md:w-1/2 mb-4 md:mb-0'>
               <h1 className='font-bold text-lg md:text-5xl mt-10'>Don’t Miss Out!</h1>
               <p className='font-medium text-lg md:text-2xl w-full md:w-10/12 lg:w-8/12'>
