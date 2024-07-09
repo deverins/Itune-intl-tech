@@ -1,13 +1,23 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import backgroundImg from '../Components/imgs/bg-img.png';
 import music from '../Components/imgs/screen-lap.png';
 import music1 from '../Components/imgs/screen-lap2.png';
 import search from '../Components/imgs/Search.png';
 import sale from '../Components/imgs/sale.png';
 import products from './productData';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { ProductContext } from '../context/ProductContext';
+import { toast } from 'react-toastify';
 
 const ProductSellerPage = () => {
+  const { dispatch } = useContext(ProductContext);
+  const navigate = useNavigate()
+  const addToCart = (product) => {
+    dispatch({ type: 'ADD_TO_CART', payload: { ...product, quantity: 1 } });
+    toast.success(`Succesfully add to cart`)
+    navigate(`/product/cart`)
+  };
+
   return (
     <>
       <main className="pt-24 overflow-x-hidden">
@@ -40,7 +50,7 @@ const ProductSellerPage = () => {
           </h2>
         </div>
         <section className="py-2 pb-6">
-          <div className="lg:max-w-screen-lg xl:mx-auto mx-4 md:mx-4 lg:mx-10  sm:mx-4">
+          <div className="lg:max-w-screen-lg xl:mx-auto mx-4 md:mx-4 lg:mx-10 sm:mx-4">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {products.map(product => (
                 <div key={product.id} className="bg-[#AAABE4] p-4 rounded-lg shadow-md">
@@ -52,9 +62,12 @@ const ProductSellerPage = () => {
                     ))}
                   </div>
                   <p className="font-bold mb-4">{product.price}</p>
-                  <Link to='/product/cart'>
-                    <button className="w-full bg-[#2E3192] text-white p-2 rounded-lg transition-transform transform hover:scale-105">Add to cart</button>
-                  </Link>
+                  <button
+                    onClick={() => addToCart(product)}
+                    className="w-full bg-[#2E3192] text-white p-2 rounded-lg transition-transform transform hover:scale-105"
+                  >
+                    Add to cart
+                  </button>
                 </div>
               ))}
             </div>

@@ -54,7 +54,7 @@ const products = [
       "8th Gen"
     ],
     price: "NGN290,000.00",
-    image:`${product4}`,
+    image: `${product4}`,
   },
   {
     id: 5,
@@ -70,7 +70,7 @@ const products = [
   },
   {
     id: 6,
-    name: "HP Elitebook 1040",
+    name: "HP Elitebook 840 G5 ",
     description: [
       "Core I7",
       "256SSD",
@@ -78,11 +78,11 @@ const products = [
       "8th Ge"
     ],
     price: "NGN290,000.00",
-    image:`${product6}`,
+    image: `${product6}`,
   },
   {
     id: 7,
-    name: "HP Elitebook 1040",
+    name: "Sandisk Ultra",
     description: [
       "Core I7",
       "256SSD",
@@ -94,7 +94,7 @@ const products = [
   },
   {
     id: 8,
-    name: "HP Elitebook 1040",
+    name: "Apple IPhone 14 Pro Max ",
     description: [
       "Core I7",
       "256SSD",
@@ -104,7 +104,6 @@ const products = [
     price: "NGN290,000.00",
     image: `${product8}`,
   },
-  // Add other products similarly...
 ];
 
 export default products;
