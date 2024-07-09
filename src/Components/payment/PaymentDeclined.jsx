@@ -12,12 +12,12 @@ const PaymentDeclined = () => {
       <main className='w-full bg-[#afafd1]'>
         <h2 className="text-xl lg:text-2xl font-Montserrat font-bold mb-4 pt-28 ml-4 md:ml-28">Payment Information</h2>
         <div className='w-full flex justify-center my-4 mt-6'>
-        <div className='flex items-center lg:w-[402px] lg:h-[48px] sm:w-[350px] sm:h-[35px] w-[350px] h-[35px] md:w-[300px] md:h-[35px] text-white rounded-3xl text-center py-1 bg-[#EC1D25]'>
+          <div className='flex items-center lg:w-[402px] lg:h-[48px] sm:w-[350px] sm:h-[35px] w-[350px] h-[35px] md:w-[300px] md:h-[35px] text-white rounded-3xl text-center py-1 bg-[#EC1D25]'>
             <p className='font-semibold text-lg flex-grow'>Payment Declined</p>
           </div>
-            <div className='flex-shrink-0'>
-              <img src={qusetionmark} className='w-10 h-10 ml-3' alt="Question Mark" />
-            </div>
+          <div className='flex-shrink-0'>
+            <img src={qusetionmark} className='w-10 h-10 ml-3' alt="Question Mark" />
+          </div>
         </div>
         <div className="flex flex-col lg:flex-row justify-between p-4 md:p-8 mx-4 md:mx-20">
           <div className="w-full lg:w-[60%] lg:h-[1000px] md:h-[900px] rounded-lg p-4 md:p-8 bg-white mb-8 lg:mb-0">
@@ -71,9 +71,9 @@ const PaymentDeclined = () => {
             </form>
             <div className="mt-8">
               <Link to='/payment-successful'>
-              <button type="submit" className="w-full md:w-72 border border-white py-3 bg-[#575757] text-white font-bold rounded">
-                Pay ₦1,730,000
-              </button>
+                <button type="submit" className="w-full md:w-72 border border-white py-3 bg-[#575757] text-white font-bold rounded">
+                  Pay ₦1,730,000
+                </button>
               </Link>
             </div>
           </div>

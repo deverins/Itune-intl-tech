@@ -6,7 +6,7 @@ import product4 from '../Components/imgs/usb.png';
 import product5 from '../Components/imgs/laptop-2.png';
 import product6 from '../Components/imgs/laptop-3.png';
 import product7 from '../Components/imgs/sandix.png';
-import product8 from '../Components/imgs/iphone-14.png';
+import product8 from '../Components/imgs/product3.png';
 
 const products = [
   {
@@ -75,7 +75,7 @@ const products = [
       "Core I7",
       "256SSD",
       "16Gb Ram",
-      "8th Gen"
+      "8th Ge"
     ],
     price: "NGN290,000.00",
     image:`${product6}`,

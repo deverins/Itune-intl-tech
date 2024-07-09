@@ -7,11 +7,11 @@ const Footer = () => {
   return (
     <>
       <footer className="bg-[#111236] text-white">
-        <div className="max-w-screen-lg mx-14 font-medium grid grid-cols-1 md:grid-cols-3 gap-20 pt-8">
+        <div className="max-w-screen-lg mx-14 font-medium flex flex-wrap gap-8 justify-between pt-8">
           {/* Categories */}
           <div>
-            <h3 className="font-bold text-xl mb-4">Categories</h3>
-            <ul className="space-y-3">
+            <h3 className="font-bold text-[16px] lg:text-[20px] md:text-[16px] mb-4">Categories</h3>
+            <ul className="space-y-2 font-medium lg:text-[20px] md:text-[16px]">
               <li>Computers and accessories</li>
               <li>Smartphones and tablets</li>
               <li>Wearable technology</li>
@@ -25,8 +25,8 @@ const Footer = () => {
           </div>
           {/* Services */}
           <div>
-            <h3 className="font-bold text-xl mb-4">Services</h3>
-            <ul className="space-y-3">
+            <h3 className="font-bold text-[16px] lg:text-[20px] md:text-[16px] mb-4">Services</h3>
+            <ul className="space-y-2 font-medium text-[16px] lg:text-[20px] md:text-[16px]">
               <li>CCTV installation</li>
               <li>Network installation</li>
               <li>Dstv decoder installation</li>
@@ -35,34 +35,15 @@ const Footer = () => {
               <li>Gotv subscription</li>
             </ul>
           </div>
-          {/* Contact */}
-          <div>
-            <h3 className="font-bold text-xl mb-4">Contact</h3>
-            <ul className="space-y-3">
-              <li>Home</li>
-              <li>About Us</li>
-              <li>Contact</li>
-            </ul>
-          </div>
+        </div>
+        <div className="mt-8 font-bold border border-l-inherit">
+        </div>
+        <div className="mb-4 mt-2 mx-14">
+          <p>Mobile: 08123456789</p>
+          <p>Email: ituneintltech@gmail.com</p>
         </div>
 
-        <div className="mt-8 mx-14">
-          <hr />
-          <h4 className="font-bold mb-2 mt-4">Newsletter</h4>
-          <div className="mt-4 flex">
-            <div className="relative flex items-center">
-              <img src={email} alt="Search" className="w-6 h-6 absolute left-3" />
-              <input type="text" placeholder='Email Address' className="px-10 w-[258px] text-black py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:border-transparent flex-" />
-            </div>
-            <button className="w-[95px] bg-[#2E3192] border border-white ml-6 text-white p-2 rounded-lg">Subscribe</button>
-          </div>
-          <div className="mb-4 mt-3">
-            <p>Mobile: 08123456789</p>
-            <p>Email: ituneintltech@gmail.com</p>
-          </div>
-        </div>
-
-        <div className="bg-white py-4 flex justify-between items-center px-8">
+        <div className="bg-white py-3 flex justify-between items-center lg:px-8 px-4 md:px-2">
           <img src={footerLogo} alt="Logo" className="h-12 ml-4" />
           <p className="text-gray-600">©2024ituneintltech</p>
           <button className="w-12 h-12 bg-blue-900 rounded-full flex items-center justify-center">

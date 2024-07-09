@@ -34,7 +34,7 @@ const CartPage = () => {
                       className="w-full md:w-[242.91px] md:h-[210.23px] object-cover mb-4 md:mb-0 md:mr-4" 
                     />
                     <div className="text-center md:text-left">
-                      <h3 className="font-semibold">{product.name}</h3>
+                      <h3 className="font-semibold md:text-[16px] lg:text-[28px]">{product.name}</h3>
                       {product.description.map((desc, index) => (
                         <p key={index}>{desc}</p>
                       ))}
@@ -42,7 +42,7 @@ const CartPage = () => {
                   </td>
                   <td className="py-4">{product.price}</td>
                   <td className="py-4">
-                    <div className="flex items-center w-[77px] h-[50px] rounded-lg border gap-6 text-bold border-purple-300 text-purple-300">
+                    <div className="flex items-center lg:w-[75px] lg:h-[50px] w-[54.82px] h-[35.6px] rounded-lg border space-x-2   text-bold border-[#2E3192] text-[#2E3192] ">
                       <p className='font-bold'>-</p>
                       <p className='font-bold'>{product.quantity}</p>
                       <p className='font-bold'>+</p>
