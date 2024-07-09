@@ -2,13 +2,14 @@ import React, { useContext } from 'react';
 import { ProductContext } from '../context/ProductContext';
 import cartt from '../Components/imgs/cart2.png';
 import { Link } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const CartPage = () => {
   const { state, dispatch } = useContext(ProductContext);
   const { cart } = state;
 
   const parsePrice = (priceString) => {
-    // Remove the "NGN" prefix and commas
     const priceNumber = priceString.replace(/NGN|,/g, '').trim();
     return Number(priceNumber);
   };
@@ -23,10 +24,12 @@ const CartPage = () => {
 
   const handleIncrement = (productId) => {
     dispatch({ type: 'INCREMENT_QUANTITY', payload: productId });
+    toast.success('Product added successfully');
   };
 
   const handleDecrement = (productId) => {
     dispatch({ type: 'DECREMENT_QUANTITY', payload: productId });
+    toast.info('Item quantity has been updated');
   };
 
   const subtotal = cart.reduce((total, product) => total + calculateTotalPrice(product.price, product.quantity), 0);
@@ -35,14 +38,17 @@ const CartPage = () => {
 
   return (
     <>
-      <div className="cart-page-container font-bold bg-[#b4b5e5]">
+      <ToastContainer />
+      <div className="cart-page-container font-bold bg-[#b4b5e5] ">
         <div className="flex items-center pt-28 mx-auto max-w-screen-lg">
           <div className='ml-3 lg:-ml-2'>
             <img src={cartt} alt="Cart" className="w-10 h-10 mr-2" />
           </div>
           Cart
         </div>
-        <p className="flex items-center text-sm mt-2 mx-auto max-w-screen-lg "><span className='font-bold ml-4 md:ml-4 text-lg mr-1'>{cart.length}</span> items in your cart</p>
+        <p className="flex items-center text-sm mt-2 mx-auto max-w-screen-lg">
+          <span className='font-bold ml-4 md:ml-4 text-lg mr-1'>{cart.length}</span> items in your cart
+        </p>
         <section className="max-w-screen-lg mx-auto p-4 bg-white rounded-2xl shadow-lg mt-4">
           <table className="w-full">
             <thead className="hidden md:table-header-group">
@@ -76,7 +82,7 @@ const CartPage = () => {
                     </div>
                   </td>
                   <td className="py-4">₦{calculateTotalPrice(product.price, product.quantity).toLocaleString()}</td>
-                  <td className="py-4">
+                  <td className="py-4 ">
                     <button
                       onClick={() => handleRemove(product.id)}
                       className="bg-red-500 text-white px-2 py-1 rounded"

@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://github.com/wunmicrown/Itune-intl-tech",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
