@@ -1,12 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from '../Components/imgs/logo.png';
 import cart from '../Components/imgs/cart.png';
 import three from '../Components/imgs/three.png';
 import { Link } from 'react-router-dom';
 
 export const Navbar = () => {
-  <>
-    return (
+  return (
     <>
       <nav className="bg-[#2E3192] top-0 h-24 w-full z-50 fixed flex justify-between items-center px-4 md:px-20 text-white">
         <div className="mt-2">
@@ -32,8 +31,7 @@ export const Navbar = () => {
         </ul>
       </nav>
     </>
-    );
-  </>
+  );
 };
 
 export default Navbar;
