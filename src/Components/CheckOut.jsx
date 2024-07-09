@@ -46,18 +46,18 @@ const CheckOut = () => {
                 </div>
               </div>
               <div className='flex flex-col md:flex-row justify-between'>
-                <label className="block mb-1 text-xl font-bold mt-10">Type of Card</label>
+                <label className="block mb-1 text-xl font-bold mt-10">Delivery Method</label>
                 <div className="flex items-center space-x-8 mb-10 mt-10">
                   <label className="flex items-center">
                     <input type="checkbox" className="mr-2 w-5 h-5 md:w-6 md:h-6" />
                     <p className='text-lg md:text-1xl'>
-                      Verve
+                    Pickup
                     </p>
                   </label>
                   <label className="flex items-center">
                     <input type="checkbox" className="mr-2 w-5 h-5 md:w-6 md:h-6" />
                     <p className='text-lg md:text-1xl'>
-                      Visa
+                    Delivery
                     </p>
                   </label>
                 </div>
@@ -137,7 +137,7 @@ const CheckOut = () => {
           </div>
           
         </div>
-        <div className="mt-8">
+        <div className="pb-4 ml-28">
               <Link to='/card-verification'>
               <button type="submit" className="w-full md:w-72 border border-white py-3 bg-[#2E3192] text-white font-bold rounded">
                 Pay ₦1,730,000
