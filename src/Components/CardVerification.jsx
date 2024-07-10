@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // Make sure to import useNavigate from react-router-dom
+import { useNavigate } from 'react-router-dom';
 
 const CardVerification = () => {
   // Initialize with default OTP values
   const [otp, setOtp] = useState(['7', '1', '6', '4']);
-  const navigate = useNavigate(); // Correct usage of useNavigate
+  const navigate = useNavigate();
 
   const handleChange = (e, index) => {
     const value = e.target.value;
@@ -19,12 +19,8 @@ const CardVerification = () => {
     }
   };
 
-  const handleResendCode = () => {
-    // Implement resend code logic here
-  };
-
   const handleVerify = () => {
-    navigate('/payment-in-process'); 
+    navigate('/payment-in-process');
   };
 
   return (
@@ -51,7 +47,7 @@ const CardVerification = () => {
           ))}
         </div>
         <div className="text-center mb-4">
-          <button className="text-lg underline" onClick={handleResendCode}>
+          <button className="text-lg underline">
             Resend Code
           </button>
         </div>

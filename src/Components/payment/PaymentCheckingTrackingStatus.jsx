@@ -1,13 +1,14 @@
-import React, { useState } from 'react';
-import atmCard from '../Components/imgs/atm_card.png';
-import product2 from '../Components/imgs/product1.png';
-import product3 from '../Components/imgs/product2.png';
-import product7 from '../Components/imgs/product3.png';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import atmCard from '../imgs/atm_card.png';
+import product2 from '../imgs/product1.png';
+import product3 from '../imgs/product2.png';
+import product7 from '../imgs/product3.png';
+import qusetionmark from '../imgs/qusetionmark.png';
 
-const CheckOut = () => {
+const PaymentCheckingTrackingStatus = () => {
   const [selectedCardType, setSelectedCardType] = useState('');
   const [selectedDeliveryMethod, setSelectedDeliveryMethod] = useState('');
+  const [paymentStatus, setPaymentStatus] = useState('idle');
 
   const handleCardTypeChange = (type) => {
     setSelectedCardType(type);
@@ -17,14 +18,68 @@ const CheckOut = () => {
     setSelectedDeliveryMethod(method);
   };
 
+  const handlePayment = () => {
+    // Clear form inputs
+    document.getElementById('card-number').value = '';
+    document.getElementById('expiry-date').value = '';
+    document.getElementById('cvv').value = '';
+    document.getElementById('residence-address').value = '';
+    document.getElementById('state').value = '';
+    document.getElementById('phone-number').value = '';
+
+    setPaymentStatus('loading');
+    setTimeout(() => {
+      setPaymentStatus('declined');
+    }, 2000);
+
+    setTimeout(() => {
+      setPaymentStatus('idle');
+    }, 16000);
+  };
+
+  useEffect(() => {
+    if (paymentStatus === 'declined') {
+      const timer = setTimeout(() => {
+        setPaymentStatus('successful');
+      }, 4000);
+      return () => clearTimeout(timer);
+    }
+  }, [paymentStatus]);
+
   return (
     <>
       <main className='w-full bg-[#afafd1]'>
         <h2 className="text-xl lg:text-2xl font-Montserrat font-bold mb-4 pt-28 ml-4 md:ml-28">Payment Information</h2>
-  
+
+        {paymentStatus === 'loading' && (
+          <div className='w-full flex justify-center my-4 mt-6'>
+            <div className='flex items-center lg:w-[402px] lg:h-[48px] sm:w-[350px] sm:h-[35px] w-[350px] h-[35px] md:w-[300px] md:h-[35px] text-white rounded-3xl text-center py-1 bg-[#EC1D25]'>
+              <p className='font-semibold text-lg flex-grow'>Please wait...</p>
+            </div>
+          </div>
+        )}
+
+        {paymentStatus === 'declined' && (
+          <div className='w-full flex justify-center my-4 mt-6'>
+            <div className='flex items-center lg:w-[402px] lg:h-[48px] sm:w-[350px] sm:h-[35px] w-[350px] h-[35px] md:w-[300px] md:h-[35px] text-white rounded-3xl text-center py-1 bg-[#EC1D25]'>
+              <p className='font-semibold text-lg flex-grow'>Payment Declined</p>
+            </div>
+            <div className='flex-shrink-0'>
+              <img src={qusetionmark} className='w-10 h-10 ml-3' alt="Question Mark" />
+            </div>
+          </div>
+        )}
+
+        {paymentStatus === 'successful' && (
+          <div className='w-full flex justify-center my-4 mt-6'>
+            <div className='flex items-center lg:w-[402px] lg:h-[48px] sm:w-[350px] sm:h-[35px] w-[350px] h-[35px] md:w-[300px] md:h-[35px] text-white rounded-3xl text-center py-1 bg-[#28a745]'>
+              <p className='font-semibold text-lg flex-grow'>Payment Successful</p>
+            </div>
+          </div>
+        )}
+
         <div className="flex flex-col lg:flex-row justify-between p-4 md:p-8 mx-4 md:mx-20">
           <div className="flex flex-col gap-8 w-full lg:w-2/3">
-
             <div className="w-full h-auto rounded-lg p-4 md:p-8 bg-white mb-8 lg:mb-0">
               <div className="bg-gray-200 p-4 mb-6 rounded-xl">
                 <img src={atmCard} alt="Credit Card" className="w-full" />
@@ -121,7 +176,7 @@ const CheckOut = () => {
                     className="w-full p-2 border my-4 border-black py-3 md:py-4 rounded-xl"
                   />
                   <label htmlFor="phone-number" className="block mb-2 font-bold mt-4">Phone Number</label>
-                  <input 
+                  <input
                     type="text"
                     id="phone-number"
                     className="w-full p-2 border my-4 border-black py-3 md:py-4 rounded-xl"
@@ -161,18 +216,18 @@ const CheckOut = () => {
           </div>
         </div>
 
-
         <div className="pb-4 mx-[50px] md:ml-36 lg:mx-28">
-          <Link to='/card-verification'>
-            <button type="submit" className="w-full md:w-72  border border-white py-3 bg-[#2E3192] text-white font-bold rounded">
-              Pay ₦1,730,000
-            </button>
-          </Link>
+          <button
+            type="button"
+            className="w-full md:w-72 border border-white py-3 bg-[#2E3192] text-white font-bold rounded"
+            onClick={handlePayment}
+          >
+            Pay ₦1,730,000
+          </button>
         </div>
-
       </main>
     </>
   );
 };
 
-export default CheckOut;
+export default PaymentCheckingTrackingStatus;
