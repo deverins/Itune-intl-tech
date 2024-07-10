@@ -23,7 +23,7 @@ const CartPage = () => {
 
   const handleIncrement = (productId) => {
     dispatch({ type: 'INCREMENT_QUANTITY', payload: productId });
-    toast.success('Product added successfully');
+    toast.success('Product successfully add to cart');
   };
 
   const handleDecrement = (productId) => {
