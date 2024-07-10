@@ -73,7 +73,7 @@ const CartPage = () => {
                   </td>
                   <td className="py-4">₦{parsePrice(product.price).toLocaleString()}</td>
                   <td className="py-4">
-                    <div className="flex items-center lg:w-[75px] lg:h-[50px] md:w-[55px] md:p-2 md:h-[35px] w-[53px] h-[29px] rounded-lg border space-x-2 lg:space-x-mx-4 font-bold border-[#2E3192] text-[#2E3192]">
+                    <div className="flex items-center lg:w-[75px] lg:h-[50px] md:w-[55px] md:p-2 md:h-[35px] w-[53px] h-[29px] rounded-lg border space-x-2 lg:space-x-4 font-bold border-[#2E3192] text-[#2E3192]">
                       <button onClick={() => handleDecrement(product.id)} className="font-bold md:font-semibold md:text-sm"><span className=' font-bold text-3xl'>-</span></button>
                       <p className="font-bold md:font-semibold md:text-sm">{product.quantity}</p>
                       <button onClick={() => handleIncrement(product.id)} className="font-bold md:font-semibold md:text-sm"><span className=' font-bold text-2xl'>+</span></button>
