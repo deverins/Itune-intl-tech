@@ -14,8 +14,7 @@ const ProductSellerPage = () => {
   const navigate = useNavigate()
   const addToCart = (product) => {
     dispatch({ type: 'ADD_TO_CART', payload: { ...product, quantity: 1 } });
-    toast.success(`Succesfully add to cart`)
-    navigate(`/product/cart`)
+    toast.success(`Product added successfully`)
   };
 
   return (
@@ -54,7 +53,7 @@ const ProductSellerPage = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {products.map(product => (
                 <div key={product.id} className="bg-[#AAABE4] p-4 rounded-lg shadow-md">
-                  <img src={product.image} alt={product.name} className="w-full object-cover mb-4 rounded-lg md:w-3/4 mx-auto transition-transform transform hover:scale-105" />
+                  <img src={product.image} alt={product.name} className="w-full object-cover hover:cursor-pointer mb-4 rounded-lg md:w-3/4 mx-auto transition-transform transform hover:scale-105" />
                   <h3 className="text-lg font-bold mb-2">{product.name}</h3>
                   <div className="text-gray-700 mb-2">
                     {product.description.map((line, index) => (
