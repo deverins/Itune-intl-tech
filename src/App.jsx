@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route, Outlet } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import ProductSellerPage from './Components/ProductSellerPage';
 import Layout from './Components/Layout';
 import CartPage from './Components/CartPage.jsx';

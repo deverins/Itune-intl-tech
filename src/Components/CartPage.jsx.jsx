@@ -2,8 +2,7 @@ import React, { useContext } from 'react';
 import { ProductContext } from '../context/ProductContext';
 import cartt from '../Components/imgs/cart2.png';
 import { Link } from 'react-router-dom';
-import { toast, ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { toast } from 'react-toastify';
 
 const CartPage = () => {
   const { state, dispatch } = useContext(ProductContext);
@@ -38,7 +37,6 @@ const CartPage = () => {
 
   return (
     <>
-      <ToastContainer />
       <div className="cart-page-container font-bold bg-[#b4b5e5] ">
         <div className="flex items-center pt-28 mx-auto max-w-screen-lg">
           <div className='ml-3 lg:-ml-2'>
