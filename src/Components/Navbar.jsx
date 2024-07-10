@@ -11,7 +11,7 @@ export const Navbar = () => {
 
   return (
     <>
-      <nav className="bg-[#2E3192] top-0 h-24 w-full z-50 fixed flex justify-between items-center px-4 md:px-20 text-white">
+      <nav className="bg-[#2E3192] top-0 h-24 w-full z-10 fixed flex justify-between items-center px-4 md:px-20 text-white">
         <div className="mt-2">
           <Link to={''}>
             <img className="w-28" src={logo} alt="Logo" />
