@@ -24,7 +24,7 @@ const CheckOut = () => {
 
         <div className="flex flex-col lg:flex-row justify-between p-4 md:p-8 mx-4 md:mx-20">
           <div className='flex flex-col gap-8'>
-
+            
             <div className="w-full lg:w-[60%] lg:h-[800px] md:h-[900px] rounded-lg p-4 md:p-8 bg-white mb-8 lg:mb-0">
               <div className="bg-gray-200 p-4 mb-6 rounded-xl">
                 <img src={atmCard} alt="Credit Card" className="w-full" />
@@ -85,7 +85,7 @@ const CheckOut = () => {
                 </div>
               </form>
             </div>
-
+            
             <div className="w-full lg:w-[60%] lg:h-[550px] md:h-[900px] rounded-lg p-4 md:p-8 bg-white mb-8 lg:mb-0">
               <form className="space-y-4">
                 <div>
@@ -167,7 +167,7 @@ const CheckOut = () => {
             </div>
           </div>
         </div>
-
+        
         <div className="pb-4 ml-28">
           <Link to='/card-verification'>
             <button type="submit" className="w-full md:w-72 border border-white py-3 bg-[#2E3192] text-white font-bold rounded">
