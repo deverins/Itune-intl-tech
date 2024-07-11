@@ -46,9 +46,13 @@ const Footer = () => {
         <div className="bg-white py-3 flex justify-between items-center lg:px-8 px-4 md:px-2">
           <img src={footerLogo} alt="Logo" className="h-12 ml-4" />
           <p className="text-gray-600">©2024ituneintltech</p>
-          <button className="w-12 h-12 bg-blue-900 rounded-full flex items-center justify-center">
-            <img src={arrow} alt="Up Arrow" className="w-6 h-6" />
-          </button>
+          <button 
+  className="w-12 h-12 bg-blue-900 rounded-full flex items-center justify-center"
+  onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+>
+  <img src={arrow} alt="Up Arrow" className="w-6 h-6" />
+</button>
+
         </div>
       </footer>
     </>
