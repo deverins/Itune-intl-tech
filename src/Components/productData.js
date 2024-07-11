@@ -53,7 +53,7 @@ const products = [
       "16Gb Ram",
       "8th Gen"
     ],
-    price: "NGN290,000.00",
+    price: "NGN60,000.00",
     image: `${product4}`,
   },
   {
@@ -77,7 +77,7 @@ const products = [
       "16Gb Ram",
       "8th Ge"
     ],
-    price: "NGN290,000.00",
+    price: "NGN270,000.00",
     image: `${product6}`,
   },
   {
@@ -101,7 +101,7 @@ const products = [
       "16Gb Ram",
       "8th Gen"
     ],
-    price: "NGN290,000.00",
+    price: "NGN1,500,000.00",
     image: `${product8}`,
   },
 ];

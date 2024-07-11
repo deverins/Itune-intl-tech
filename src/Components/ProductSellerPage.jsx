@@ -35,12 +35,19 @@ const ProductSellerPage = () => {
             </div>
           </div>
           <div className="flex items-center mt-10 lg:w-1/2 md:w-full justify-center md:justify-start px-2">
-            <div className="relative flex items-center w-full max-w-md mb-2 md:mb-0 md:mr-4 pl-0 lg:pl-12 md:-pl-12">
-              <img src={search} alt="Search" className="w-6 h-6 absolute lg:left-12 md:left-10 left-0" />
-              <input type="text" placeholder='Search' className="pl-10 pr-3 py-2 w-full text-black border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:border-transparent" />
-            </div>
-            <button className="bg-[#2E3192] border border-white text-white py-2 px-4 rounded-md ml-2">Search</button>
-          </div>
+  <div className="relative flex items-center w-full max-w-md mb-2 md:mb-0 md:mr-4 pl-0 lg:pl-12 md:-pl-12">
+    <img src={search} alt="Search" className="w-6 h-6 absolute inset-y-2 left-2 sm:left-2 md:left-2 lg:left-[55px] xl:left-[50px]" />
+    <input 
+      type="text" 
+      placeholder="Search" 
+      className="pl-10 pr-3 py-2 w-full text-black border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:border-transparent" 
+    />
+  </div>
+  <div className='md:mb-2 mb-2 lg:mb-0 xl:mb-0 sm:mb-2'>
+    <button className="bg-[#2E3192] text-white py-2 px-4 rounded-md ml-2">Search</button>
+  </div>
+</div>
+
         </section>
 
         <div className='bg-[#b4b5e5] w-full'>
