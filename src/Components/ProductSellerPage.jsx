@@ -114,26 +114,28 @@ const ProductSellerPage = () => {
               </div>
             )}
           </div>
-          <div className="flex justify-center mt-6">
+        </section>
+
+        {/* Sale Section */}
+        <section className="py-10 text-white bg-[#AAABE4]">
+          <div className='lg:max-w-screen-lg xl:mx-auto mx-4 md:mx-4 lg:mx-10 sm:mx-4'>
+            <div className="flex justify-between mt-2 mb-6">
             <button
               onClick={handlePreviousPage}
               disabled={!previousPage}
-              className="px-4 py-2 mx-2 bg-gray-200 text-gray-800 rounded-md hover:bg-gray-300 disabled:bg-gray-400"
+              className="px-4 py-2 mx-2 bg-gray-200 w-40 font-bold text[18px] text-black rounded-md hover:bg-gray-300 disabled:bg-gray-400"
             >
               Previous
             </button>
             <button
               onClick={handleNextPage}
               disabled={!nextPage}
-              className="px-4 py-2 mx-2 bg-gray-200 text-gray-800 rounded-md hover:bg-gray-300 disabled:bg-gray-400"
+              className="px-4 py-4 mx-2 bg-[#575757] bg-opacity-50 font-bold text[18px] w-40 text-black rounded-md hover:bg-gray-300 disabled:bg-gray-400"
             >
               Next
             </button>
+            </div>
           </div>
-        </section>
-
-        {/* Sale Section */}
-        <section className="py-10 text-white bg-[#AAABE4]">
           <div>
             <img src={sale} className='w-full object-cover' alt="Sale" />
           </div>
