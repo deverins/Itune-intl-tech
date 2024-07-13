@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, BrowserRouter as Router } from 'react-router-dom';
 import ProductSellerPage from './Components/ProductSellerPage';
 import Layout from './Components/Layout';
 import CartPage from './Components/CartPage.jsx';
@@ -9,6 +9,7 @@ import { ProductProvider } from './context/ProductContext.jsx';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import PaymentCheckingTrackingStatus from './Components/payment/PaymentCheckingTrackingStatus.jsx';
+import ScrollToTop from './utils/scrollToTop.js';
 
 const App = () => {
   return (
@@ -27,6 +28,7 @@ const App = () => {
       />
       <div className='font-Montserrat'>
         <ProductProvider>
+          <ScrollToTop />
           <Routes>
             <Route path="/" element={<Layout />}>
               <Route index element={<ProductSellerPage />} />

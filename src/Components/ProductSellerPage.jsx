@@ -11,15 +11,33 @@ import { fetchProducts } from '../utils/fetchProducts ';
 const ProductSellerPage = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [nextPage, setNextPage] = useState(null);
+  const [previousPage, setPreviousPage] = useState(null);
+  const [totalPages, setTotalPages] = useState(1);
   const { dispatch } = useContext(ProductContext);
 
   useEffect(() => {
-    fetchProducts(setProducts, setLoading);
-  }, []);
+    fetchProducts(setProducts, setLoading, setNextPage, setPreviousPage, setTotalPages, currentPage);
+  }, [currentPage]);
 
   const addToCart = (product) => {
     dispatch({ type: 'ADD_TO_CART', payload: { ...product, quantity: 1 } });
     toast.success(`Product added successfully`);
+  };
+
+  const handleNextPage = () => {
+    if (nextPage) {
+      setCurrentPage(currentPage + 1);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
+  const handlePreviousPage = () => {
+    if (previousPage) {
+      setCurrentPage(currentPage - 1);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   };
 
   return (
@@ -67,7 +85,7 @@ const ProductSellerPage = () => {
             ) : (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {products.map(product => (
-                  <div key={product.unique_id} className="bg-[#AAABE4] p-4 rounded-lg shadow-md">
+                  <div key={product.id} className="bg-[#AAABE4] p-4 rounded-lg shadow-md">
                     <img src={`/api/images/${product.photos[0].url}`} alt={product.name} className="w-full object-cover hover:cursor-pointer mb-4 rounded-lg md:w-3/4 mx-auto transition-transform transform hover:scale-105" />
                     <h3 className="text-lg font-bold mb-2">{product.name}</h3>
                     <div className="text-gray-700 mb-2">
@@ -78,8 +96,9 @@ const ProductSellerPage = () => {
                     <p className="font-bold mb-4">
                       {product.current_price && product.current_price.length > 0 && product.current_price[0]['NGN'] && product.current_price[0]['NGN'].length > 0
                         ? product.current_price[0]['NGN'][0]
-                        : 'Price not available'}
-                    </p>                    <button
+                        : `₦0`}
+                    </p>
+                    <button
                       onClick={() => addToCart(product)}
                       className="w-full bg-[#2E3192] text-white p-2 rounded-lg transition-transform transform hover:scale-105"
                     >
@@ -89,6 +108,22 @@ const ProductSellerPage = () => {
                 ))}
               </div>
             )}
+          </div>
+          <div className="flex justify-center mt-6">
+            <button
+              onClick={handlePreviousPage}
+              disabled={!previousPage}
+              className="px-4 py-2 mx-2 bg-gray-200 text-gray-800 rounded-md hover:bg-gray-300 disabled:bg-gray-400"
+            >
+              Previous
+            </button>
+            <button
+              onClick={handleNextPage}
+              disabled={!nextPage}
+              className="px-4 py-2 mx-2 bg-gray-200 text-gray-800 rounded-md hover:bg-gray-300 disabled:bg-gray-400"
+            >
+              Next
+            </button>
           </div>
         </section>
 
