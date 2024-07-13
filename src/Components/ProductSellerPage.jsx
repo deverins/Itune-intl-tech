@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useContext } from 'react';
-import axios from 'axios';
 import backgroundImg from '../Components/imgs/bg-img.png';
 import music from '../Components/imgs/screen-lap.png';
 import music1 from '../Components/imgs/screen-lap2.png';

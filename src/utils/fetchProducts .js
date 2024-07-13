@@ -1,4 +1,3 @@
-// src/api.js
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import { API_URL } from '../Components/constants/Api';
