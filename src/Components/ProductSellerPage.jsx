@@ -123,14 +123,14 @@ const ProductSellerPage = () => {
             <button
               onClick={handlePreviousPage}
               disabled={!previousPage}
-              className="px-4 py-2 mx-2 bg-gray-200 w-40 font-bold text[18px] text-black rounded-md hover:bg-gray-300 disabled:bg-gray-400"
+              className="px-4 py-2 mx-2 border border-[#2E3192] w-40 font-bold text[18px] text-black rounded-md hover:border-2 disabled:border-[#151736]"
             >
               Previous
             </button>
             <button
               onClick={handleNextPage}
               disabled={!nextPage}
-              className="px-4 py-4 mx-2 bg-[#575757] bg-opacity-50 font-bold text[18px] w-40 text-black rounded-md hover:bg-gray-300 disabled:bg-gray-400"
+              className="px-4 py-4 mx-2 bg-[#2E3192] text-white font-bold text[18px] w-40 rounded-md hover:bg-[#202364] disabled:bg-[#212252]"
             >
               Next
             </button>
