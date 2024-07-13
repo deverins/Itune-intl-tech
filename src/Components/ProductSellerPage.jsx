@@ -7,6 +7,7 @@ import sale from '../Components/imgs/sale.png';
 import { ProductContext } from '../context/ProductContext';
 import { toast } from 'react-toastify';
 import { fetchProducts } from '../utils/fetchProducts ';
+import Loading from '../utils/Loading';
 
 const ProductSellerPage = () => {
   const [products, setProducts] = useState([]);
@@ -81,26 +82,30 @@ const ProductSellerPage = () => {
         <section className="py-2 pb-6">
           <div className="lg:max-w-screen-lg xl:mx-auto mx-4 md:mx-4 lg:mx-10 sm:mx-4">
             {loading ? (
-              <div className="text-center py-10">Loading...</div>
-            ) : (
+              <div>
+                <Loading/>
+              </div>
+  ) : (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {products.map(product => (
-                  <div key={product.id} className="bg-[#AAABE4] p-4 rounded-lg shadow-md">
-                    <img src={`/api/images/${product.photos[0].url}`} alt={product.name} className="w-full object-cover hover:cursor-pointer mb-4 rounded-lg md:w-3/4 mx-auto transition-transform transform hover:scale-105" />
-                    <h3 className="text-lg font-bold mb-2">{product.name}</h3>
-                    <div className="text-gray-700 mb-2">
-                      {product.description ? product.description.split('\r\n').map((line, index) => (
-                        <p key={index} className='text-[#000000] font-Montserrat font-medium text-[16px]'>{line}</p>
-                      )) : <p className='text-[#000000] font-Montserrat font-medium text-[16px]'>No description available</p>}
+                  <div key={product.id} className="bg-[#AAABE4] p-4 rounded-lg shadow-md flex flex-col justify-between">
+                    <div>
+                      <img src={`/api/images/${product.photos[0].url}`} alt={product.name} className="w-full object-cover hover:cursor-pointer mb-4 rounded-lg md:w-3/4 mx-auto transition-transform transform hover:scale-105" />
+                      <h3 className="text-lg font-bold mb-2">{product.name}</h3>
+                      <div className="text-gray-700 mb-2">
+                        {product.description ? product.description.split('\r\n').map((line, index) => (
+                          <p key={index} className='text-[#000000] font-Montserrat font-medium text-[16px]'>{line}</p>
+                        )) : <p className='text-[#000000] font-Montserrat font-medium text-[16px]'>No description available</p>}
+                      </div>
+                      <p className="font-bold mb-4">
+                        {product.current_price && product.current_price.length > 0 && product.current_price[0]['NGN'] && product.current_price[0]['NGN'].length > 0
+                          ? product.current_price[0]['NGN'][0]
+                          : `₦0`}
+                      </p>
                     </div>
-                    <p className="font-bold mb-4">
-                      {product.current_price && product.current_price.length > 0 && product.current_price[0]['NGN'] && product.current_price[0]['NGN'].length > 0
-                        ? product.current_price[0]['NGN'][0]
-                        : `₦0`}
-                    </p>
                     <button
                       onClick={() => addToCart(product)}
-                      className="w-full bg-[#2E3192] text-white p-2 rounded-lg transition-transform transform hover:scale-105"
+                      className="w-full bg-[#2E3192] text-white p-2 rounded-lg transition-transform transform hover:scale-105 mt-auto"
                     >
                       Add to cart
                     </button>

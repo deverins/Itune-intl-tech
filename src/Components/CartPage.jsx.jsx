@@ -12,7 +12,7 @@ const CartPage = () => {
 
   useEffect(() => {
     fetchProducts(setProducts);
-  }, []); 
+  }, []);
 
   const parsePrice = (priceString) => {
     if (!priceString) {
