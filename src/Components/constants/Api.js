@@ -1,2 +1,1 @@
-// Api.js in constant folder
-export const API_URL= "/products?organization_id=c91bc191dc24489e83d1e0f904456a0d&reverse_sort=false&Appid=04TZ7DQM1T3NTPQ&Apikey=c18533d4498c4656a952431cfe57835120240712160525207039"
+export const API_URL = "/api/products";
