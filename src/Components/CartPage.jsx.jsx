@@ -1,14 +1,23 @@
-import React, { useContext } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import { ProductContext } from '../context/ProductContext';
 import cartt from '../Components/imgs/cart2.png';
 import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import { fetchProducts } from '../utils/fetchProducts ';
 
 const CartPage = () => {
   const { state, dispatch } = useContext(ProductContext);
   const { cart } = state;
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    fetchProducts(setProducts);
+  }, []); 
 
   const parsePrice = (priceString) => {
+    if (!priceString) {
+      return 0;
+    }
     const priceNumber = priceString.replace(/NGN|,/g, '').trim();
     return Number(priceNumber);
   };
@@ -19,16 +28,17 @@ const CartPage = () => {
 
   const handleRemove = (productId) => {
     dispatch({ type: 'REMOVE_FROM_CART', payload: productId });
+    toast.error('Product removed from cart');
   };
 
   const handleIncrement = (productId) => {
     dispatch({ type: 'INCREMENT_QUANTITY', payload: productId });
-    toast.success('Product added successfully');
+    toast.success('Product quantity increased');
   };
 
   const handleDecrement = (productId) => {
     dispatch({ type: 'DECREMENT_QUANTITY', payload: productId });
-    toast.info('Item quantity has been updated');
+    toast.info('Product quantity decreased');
   };
 
   const subtotal = cart.reduce((total, product) => total + calculateTotalPrice(product.price, product.quantity), 0);
@@ -63,7 +73,7 @@ const CartPage = () => {
                 <tr key={product.id} className="border-b">
                   <td className="py-4 flex flex-col md:flex-row items-center">
                     <img
-                      src={product.image}
+                      src={product.photos && product.photos[0] ? `/api/images/${product.photos[0].url}` : 'default-image-url'}
                       alt={product.name}
                       className="bg-[#DDDDDD] rounded-xl w-full h-auto sm:w-[300px] sm:h-[300px] md:w-[242.91px] md:h-[210.23px] object-cover mb-4 md:mb-0 md:mr-4"
                     />
