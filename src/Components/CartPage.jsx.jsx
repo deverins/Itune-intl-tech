@@ -33,12 +33,10 @@ const CartPage = () => {
 
   const handleIncrement = (productId) => {
     dispatch({ type: 'INCREMENT_QUANTITY', payload: productId });
-    toast.success('Product quantity increased');
   };
 
   const handleDecrement = (productId) => {
     dispatch({ type: 'DECREMENT_QUANTITY', payload: productId });
-    toast.info('Product quantity decreased');
   };
 
   const subtotal = cart.reduce((total, product) => total + calculateTotalPrice(product.price, product.quantity), 0);
