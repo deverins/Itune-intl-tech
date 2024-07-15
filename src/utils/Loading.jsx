@@ -9,7 +9,7 @@ const Loading = () => {
           <div className="absolute top-[-3px] left-[-3px] w-full h-full border-3 border-transparent border-t-5 border-r-5 border-solid border-[#252792] rounded-full animate-spin"></div>
         </div>
       </div>
-      <style jsx>{`
+      <style jsx='true'>{`
         .animate-spin {
           animation: spin 3s linear infinite;
         }

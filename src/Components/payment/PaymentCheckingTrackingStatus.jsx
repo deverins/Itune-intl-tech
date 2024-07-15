@@ -35,6 +35,7 @@ const PaymentCheckingTrackingStatus = () => {
     setTimeout(() => {
       setPaymentStatus('idle');
     }, 16000);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   useEffect(() => {
