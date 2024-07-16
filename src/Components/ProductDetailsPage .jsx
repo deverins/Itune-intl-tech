@@ -11,19 +11,14 @@ const ProductDetailsPage = () => {
   const [loading, setLoading] = useState(true);
   const { dispatch } = useContext(ProductContext);
 
-  const addToCart = (product) => {
+  const handleAddToCart = (product) => {
     dispatch({ type: 'ADD_TO_CART', payload: { ...product, quantity: 1 } });
-    toast.success(`Product added successfully`);
+    toast.success(`Product added to cart successfully!`);
   };
 
   useEffect(() => {
     fetchProductDetails(productId, setProduct, setLoading);
   }, [productId]);
-
-  const handleAddToCart = (product) => {
-    addToCart(product);
-    toast.success(`${product.name} added to cart!`);
-  };
 
   if (loading) {
     return <Loading />;
