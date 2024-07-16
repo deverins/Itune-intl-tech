@@ -10,6 +10,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import PaymentCheckingTrackingStatus from './Components/payment/PaymentCheckingTrackingStatus.jsx';
 import ScrollToTop from './utils/scrollToTop.js';
+import ProductDetailsPage from './Components/ProductDetailsPage .jsx';
 
 const App = () => {
   return (
@@ -29,15 +30,18 @@ const App = () => {
       <div className='font-Montserrat'>
         <ProductProvider>
           <ScrollToTop />
-          <Routes>
-            <Route path="/" element={<Layout />}>
-              <Route index element={<ProductSellerPage />} />
-              <Route path="/product/cart" element={<CartPage />} />
-              <Route path="/product/checkout" element={<CheckOut />} />
-              <Route path="/card-verification" element={<CardVerification />} />
-              <Route path="/payment-in-process" element={<PaymentCheckingTrackingStatus />} />
-            </Route>
-          </Routes>
+          {/* <Router> */}
+            <Routes>
+              <Route path="/" element={<Layout />}>
+                <Route index element={<ProductSellerPage />} />
+                <Route path="/product/cart" element={<CartPage />} />
+                <Route path="/product/checkout" element={<CheckOut />} />
+                <Route path="/card-verification" element={<CardVerification />} />
+                <Route path="/payment-in-process" element={<PaymentCheckingTrackingStatus />} />
+                <Route path="/product/:productId" element={<ProductDetailsPage />} />
+              </Route>
+            </Routes>
+          {/* </Router> */}
         </ProductProvider>
       </div>
     </>
