@@ -30,18 +30,16 @@ const App = () => {
       <div className='font-Montserrat'>
         <ProductProvider>
           <ScrollToTop />
-          {/* <Router> */}
-            <Routes>
-              <Route path="/" element={<Layout />}>
-                <Route index element={<ProductSellerPage />} />
-                <Route path="/product/cart" element={<CartPage />} />
-                <Route path="/product/checkout" element={<CheckOut />} />
-                <Route path="/card-verification" element={<CardVerification />} />
-                <Route path="/payment-in-process" element={<PaymentCheckingTrackingStatus />} />
-                <Route path="/product/:productId" element={<ProductDetailsPage />} />
-              </Route>
-            </Routes>
-          {/* </Router> */}
+          <Routes>
+            <Route path="/" element={<Layout />}>
+              <Route index element={<ProductSellerPage />} />
+              <Route path="/product/cart" element={<CartPage />} />
+              <Route path="/product/checkout" element={<CheckOut />} />
+              <Route path="/card-verification" element={<CardVerification />} />
+              <Route path="/payment-in-process" element={<PaymentCheckingTrackingStatus />} />
+              <Route path="/product/:productId" element={<ProductDetailsPage />} />
+            </Route>
+          </Routes>
         </ProductProvider>
       </div>
     </>
