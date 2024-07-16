@@ -41,7 +41,9 @@ const ProductDetailsPage = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="flex justify-center">
               {product.photos && product.photos.length > 0 && (
-                <img src={`/api/images/${product.photos[0].url}`} alt={product.name} className="w-full object-cover rounded-lg max-w-md" />
+                <div className="w-full max-w-md h-80">
+                  <img src={`/api/images/${product.photos[0].url}`} alt={product.name} className="w-full h-full object-cover rounded-lg" />
+                </div>
               )}
             </div>
             <div className="flex flex-col justify-between">
