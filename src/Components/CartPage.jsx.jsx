@@ -111,7 +111,7 @@ const CartPage = () => {
             </div>
           </div>
           <div className="mt-10">
-            <Link to="/product/checkout">
+            <Link to="/payment-in-process">
               <button className="mt-6 mb-2 py-4 rounded w-[300px] bg-[#2E3192] border border-white text-white p-2">
                 Check out
               </button>

@@ -165,7 +165,7 @@ const CheckOut = () => {
         <div className="pb-4 mx-[50px] md:ml-36 lg:mx-28">
           <Link to='/card-verification'>
             <button type="submit" className="w-full md:w-72  border border-white py-3 bg-[#2E3192] text-white font-bold rounded">
-              Pay ₦1,730,000
+              Verify payment
             </button>
           </Link>
         </div>
